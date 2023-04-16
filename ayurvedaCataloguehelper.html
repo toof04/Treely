@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="ayurvedaSearchCSS.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ayurveda Recipes</h1>
+        <h3>Enter your ingredients here :</h3>
+        <input type="text" id="search" placeholder="Search..." style="margin-right:600px ;width:500px;">
+    </header>
+
+    <main>
+
+
+        <script>
+            fetch("ayurvedalist.json")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Failed to retrieve recipe data");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    let recipeList = document.getElementById("recipe-list");
+                    for (let recipe in data) {
+                        let recipeDiv = document.createElement("div");
+                        recipeDiv.innerHTML = `<h2>${data[recipe].name}</h2><p>${data[recipe].ingredients}</p>`;
+                        recipeList.appendChild(recipeDiv);
+                    }
+                })
+                .catch((error) => {
+                    document.write(error);
+                });
+        </script>
+
+    </main>
+
+    <script src="ayurvedaSearch.JS"></script>
+</body>
+
+</html>

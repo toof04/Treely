@@ -1,0 +1,15 @@
+u = int(input("Enter your upper limit"))
+d = int(input("Enter your lower limit"))
+
+a = 0
+b = 1
+c = 0
+
+
+
+while(c <= u):
+    if(c>=d and c<=u):
+        print(c)
+    a = b
+    b = c
+    c = a + b

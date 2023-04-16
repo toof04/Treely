@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+.colored-section {
+  background-color: #363e3e;
+  color: white;
+}
+
+.logo-image {
+  width: 45px;
+  padding: 0 4px;
+  border-radius: 10px;
+}
+
+.navbar-brand {
+  font-family: 'Barlow Condensed';
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+body {
+  background: #f7f6f6;
+  font-family: Montserrat;
+}
+
+h1 {
+  text-align: center;
+  font-family: Montserrat;
+  color: #252525;
+}
+
+#product-grid {
+
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+}
+
+.product {
+  float: left;
+  text-align: center;
+  padding: 3%;
+  width: 400px;
+  margin: 20px;
+  margin-left: 100px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  border-radius: 12%;
+}
+
+.product img {
+  /* width: 100%; */
+  text-align: center;
+  height: 200px;
+  padding: 40px;
+  object-fit: cover;
+  border-radius: 90%;
+}
+
+.product h2 {
+  display: none;
+  padding: 10px;
+  font-size: 18px;
+  font-style: bold;
+  margin: 10px 0;
+}
+
+.product .price {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product .add-to-cart {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.product .add-to-cart:hover {
+  background-color: #444;
+}
+
+/* .product-imgs{
+  width: 2%;
+} */
+
+.add-to-cart {
+  bottom: 0;
+  position: relative;
+  border-radius: 0% 0% 15% 15%;
+}
+
+
+
+
+.cart-button {
+  position: relative;
+  padding: 10px;
+  width: 200px;
+  height: 60px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #4834d4;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  transition: .3s ease-in-out;
+  overflow: hidden;
+}
+
+.cart-button:hover {
+  background-color: #35269b;
+}
+
+.cart-button:active {
+  transform: scale(.9);
+}
+
+.cart-button .fa-shopping-cart {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: -10%;
+  font-size: 2em;
+  transform: translate(-50%, -50%);
+}
+
+.cart-button .fa-box {
+  position: absolute;
+  z-index: 3;
+  top: -20%;
+  left: 52%;
+  font-size: 1.2em;
+  transform: translate(-50%, -50%);
+}
+
+.cart-button span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  font-size: 1.2em;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.cart-button span.add-to-cart {
+  opacity: 1;
+}
+
+.cart-button span.added {
+  opacity: 0;
+}
+
+.cart-button.clicked .fa-shopping-cart {
+  animation: cart 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .fa-box {
+  animation: box 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked span.add-to-cart {
+  animation: txt1 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked span.added {
+  animation: txt2 1.5s ease-in-out forwards;
+}
+
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+
+  40%,
+  60% {
+    left: 50%;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes box {
+
+  0%,
+  40% {
+    top: -20%;
+  }
+
+  60% {
+    top: 40%;
+    left: 52%;
+  }
+
+  100% {
+    top: 40%;
+    left: 112%;
+  }
+}
+
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes txt2 {
+
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

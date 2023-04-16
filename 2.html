@@ -1,0 +1,250 @@
+<html>
+
+<head>
+    <style>
+        .effect2 {
+            position: relative;
+        }
+
+        .effect2:before,
+        .effect2:after {
+            z-index: -1;
+            position: absolute;
+            content: "";
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            top: 80%;
+
+            max-width: 300px;
+            background: #777;
+            -webkit-box-shadow: 0 15px 10px #777;
+            -moz-box-shadow: 0 15px 10px #777;
+            box-shadow: 0 15px 10px #777;
+            -webkit-transform: rotate(-3deg);
+            -moz-transform: rotate(-3deg);
+            -o-transform: rotate(-3deg);
+            -ms-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+        }
+
+        .effect2:after {
+            -webkit-transform: rotate(3deg);
+            -moz-transform: rotate(3deg);
+            -o-transform: rotate(3deg);
+            -ms-transform: rotate(3deg);
+            transform: rotate(3deg);
+            right: 10px;
+            left: auto;
+        }
+
+        .box {
+            width: 70%;
+            height: 200px;
+            background: #FFF;
+            margin: 20px auto;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 50px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 00px;
+            border: 1px solid #888;
+            width: 80%;
+            height: 80%;
+        }
+
+
+        .close,
+        .close1,
+        .close2 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close,
+        .close1,
+        .close2:hover,
+        .close,
+        .close1.close2:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        img {
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body bgcolor="#edf0f4" link="#393d40" scrolling="no" style="font-family:roboto;">
+    <font color="#393d40"><br>
+        <center>
+            <h1><a name="la">Login</a></h1><br>
+            <font size="4"> Login/signup to the shopping portal :
+
+                <div class="box effect2">
+                    <a id="myBtn" target="down"><BR><img src="patient-icon-27.jpg" height="90" width="111">
+                        <h3>Shop<br>Buy Plants Now ! </h3>
+                    </a><br>
+                </div>
+                <br><BR><BR><BR><BR><BR><BR><BR>
+                <div class="box effect2">
+                    <A id="myBtn1" target="down"><BR>
+                        <!-- <img src="500_F_229531197_jmFcViuzXaYOQdoOK1qyg7uIGdnuKhpt.jpg"
+                            height="100" width="95">
+                        <h3>Doctor<br>Doctor Login Portal -->
+                    </A><br></h3>
+                </div>
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <font size="5">
+                            <iframe frameborder="0" src="how1.html" height="400" width="100%" style="overflow:hidden;"
+                                noscroll scrolling="no"></iframe></p>
+                        </font>
+
+                    </div>
+                </div>
+
+                <div id="myModal1" class="modal">
+                    <div class="modal-content">
+                        <span class="close1">&times;</span>
+                        <font size="5">
+                            <iframe frameborder="0" src="how.html" height="300" width="100%"></iframe></p>
+                        </font>
+                    </div>
+                </div>
+                <div id="myModal2" class="modal">
+                    <div class="modal-content">
+                        <span class="close2">&times;</span>
+                        <font size="5">
+                            <p>Fresh, clean water is a limited resource. While most of the planet is covered in water,
+                                it is salt water that can only be consumed by humans and other species after undergoing
+                                desalination, which is an expensive process. Occurrences such as droughts further limit
+                                access to clean and fresh water, meaning people need to take steps to reduce water use
+                                and save as much water as possible. In some areas of the world, access to water is
+                                limited due to contamination. People who have access to fresh water can take steps to
+                                limit their use of water to avoid waste.
+                                <br>
+                                People should do their best to conserve water for three reasons. The less water used or
+                                wasted by people, the less clean water will become contaminated. In some cases, using
+                                excess amounts of water puts strain on septic and sewage systems, leading to
+                                contamination of groundwater, as untreated, dirty water seeps from the sewage system
+                                into the ground.
+                                <br>
+                                Water conservation reduces energy use and can even save households money. Most families
+                                pay to use water in their cities or regions. The less water a household uses, the less
+                                they have to pay each period. Appliances that use water, such as washing machines and
+                                dishwashers, also use a considerable amount of energy.
+                            </p>
+                        </font>
+                    </div>
+                </div>
+
+
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('myModal');
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+
+                    var modal1 = document.getElementById('myModal1');
+
+                    // Get the button that opens the modal
+                    var btn1 = document.getElementById("myBtn1");
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+                    var span = document.getElementsByClassName("close1")[0];
+
+                    // When the user clicks the button, open the modal 
+                    btn1.onclick = function () {
+                        modal1.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
+                        modal1.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal1) {
+                            modal1.style.display = "none";
+                        }
+                    }
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks the button, open the modal 
+                    btn.onclick = function () {
+                        modal.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+
+                    var modal2 = document.getElementById('myModal2');
+
+                    // Get the button that opens the modal
+                    var btn2 = document.getElementById("myBtn2");
+                    var span = document.getElementsByClassName("close2")[0];
+
+                    // When the user clicks the button, open the modal 
+                    btn2.onclick = function () {
+                        modal2.style.display = "block";
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
+                        modal2.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal2) {
+                            modal2.style.display = "none";
+                        }
+                    }
+
+                </script>

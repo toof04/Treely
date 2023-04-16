@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 700px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .product h7 {
+            display: none;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h2 {
+            margin-top: 0;
+        }
+
+        .product p:last-child {
+            font-weight: bold;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close-btn {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ayurveda Recipes</h1>
+        <h3>Enter your ingredients here :</h3>
+        <input type="text" id="search" placeholder="Search..." style="margin-right:600px ;width:500px;">
+    </header>
+
+    <main>
+        <div class="product">
+            <img src="ayurveda_images/ayu1.jpg" alt="Product 1">
+            <h2>Sleepy tea</h2>
+            <p>The citrusy notes of lemon balm combine with spearmint, fennel, and rose for a gentle sleepy tea that's
+                perfect for supporting a good night's rest.</p>
+            <p><a href="#" class="modal-link" data-modal-id="modal1">Brew Now !</a></p>
+            <h7>spearmint fennel rose Lemon balm Passion flower California poppy Damask rose</h7>
+
+        </div>
+
+        </div>
+
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <h2>Poopy tea</h2>
+            <p>Description of Product 2</p>
+            <p><a href="#" class="modal-link" data-modal-id="modal2">Brew Now !</a></p>
+            <h7>kartii</h7>
+
+        </div>
+
+        <div class="product">
+            <img src="product3.jpg" alt="Product 3">
+            <h2>ooga</h2>
+            <p>Description of Product 3</p>
+            <p><a href="#" class="modal-link" data-modal-id="modal3">Brew Now !</a></p>
+            <h7>singh</h7>
+
+        </div>
+
+
+
+        <!-- modals -->
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+                <h2>Modal 1</h2>
+                <p>This is the content for Modal 1</p>
+                <a href="#" class="close-btn">Close</a>
+            </div>
+        </div>
+
+        <div class="modal" id="modal2">
+            <div class="modal-content">
+                <h2>Modal 2</h2>
+                <p>This is the content for Modal 2</p>
+                <a href="#" class="close-btn">Close</a>
+            </div>
+        </div>
+
+        <div class="modal" id="modal3">
+            <div class="modal-content">
+                <h2>Modal 3</h2>
+                <p>This is the content for Modal 3</p>
+                <a href="#" class="close-btn">Close</a>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<script>
+
+    // Get all the modal links
+    const modalLinks = document.querySelectorAll('.modal-link');
+
+    // Add a click event listener to each modal link
+    modalLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const modalId = link.dataset.modalId;
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+        });
+    });
+
+    // Get all the close buttons
+    const closeBtns = document.querySelectorAll('.close-btn');
+
+    // Add a click event listener to each close button
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            const modal = btn.closest('.modal');
+            modal.style.display = 'none';
+        });
+    });
+
+    // Close the modal when the user clicks outside of it
+    window.addEventListener('click', e => {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+</html>

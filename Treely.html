@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font-Awesome -->
+  <script src="https://use.fontawesome.com/4cb96b30d0.js"></script>
+  <script src="https://kit.fontawesome.com/c5f5a10487.js" crossorigin="anonymous"></script>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="bootstrap-5.2.0-dist\css\bootstrap.css" rel="'stylesheet">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+  <title>Treely Delivery</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const search = document.getElementById("search");
+      const products = document.getElementsByClassName("product");
+
+      search.addEventListener("keyup", () => {
+        const term = search.value.toLowerCase();
+        const words = term.split(" ");
+
+        Array.from(products).forEach((product) => {
+          const title = product.getElementsByTagName("h2")[0].innerText.toLowerCase();
+          let match = true;
+
+          words.forEach((word) => {
+            if (title.indexOf(word) == -1) {
+              match = false;
+            }
+          });
+
+          if (match) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+        });
+      });
+    });
+
+    const cartButtons = document.querySelectorAll('.cart-button');
+
+    cartButtons.forEach(button => {
+      button.addEventListener('click', cartClick);
+    });
+
+    function cartClick() {
+      let button = this;
+      button.classList.add('clicked');
+    }
+
+
+
+
+  </script>
+  <style>
+    h2 {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="colored-section" id="title">
+    <!-- NavBar -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href=""><img class="logo-image" src="Images\Logo.jpg"> Treely Delivery</a>
+
+        <header>
+          <input type="text" id="search" placeholder="Search..." style="margin-left:150% ;width:500px;">
+        </header>
+
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+                </div> -->
+      </nav>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <div>
+    <!-- webpage for normal plants -->
+    <h1><br>Our Products</h1>
+    <div id="product-grid">
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant1.png" alt="Product 1"> <!--like this-->
+        <h5>Bonsai Japanese Sakura Bonsai Plant</h5>
+        <p class="price">₹49.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant2.png" alt="Product 2">
+        <h5>Dieffenbachia bowmannii dumb cane plant</h5>
+        <p class="price">₹99.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant3.png" alt="Product 3">
+        <h5>Cloud Farm Aloe Vera Plant</h5>
+        <p class="price">₹45.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant4.png" alt="Product 4">
+        <h5>Air Purifying Syngonium Plant</h5>
+        <p class="price">₹19.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant5.png" alt="Product 5">
+        <h5>Good Luck Money Plant</h5>
+        <p class="price">₹79.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant6.png" alt="Product 6">
+        <h5>Monstera Dragon Tail Plant</h5>
+        <p class="price">₹39.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant7.png" alt="Product 7">
+        <h5>Philodendron Oxycardium Green Plant</h5>
+        <p class="price">₹9.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant8.png" alt="Product 8">
+        <h5>Chlorophytum arundinaceum</h5>
+        <p class="price">₹21.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant9.png" alt="Product 9">
+        <h5>Aralia Variegated Mini Natural Live</h5>
+        <p class="price">₹12.36</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant10.png" alt="Product 10">
+        <h5>Grinian Rose Plant</h5>
+        <p class="price">₹24.01</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant11.png" alt="Product 11">
+        <h5>Sunflower Miniature</h5>
+        <p class="price">₹15.25</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant12.png" alt="Product 12">
+        <h5>Marigold Plant</h5>
+        <p class="price">₹10.15</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant13.png" alt="Product 13">
+        <h5>Lily Plant</h5>
+        <p class="price">₹17.23</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant14.png" alt="Product 14">
+        <h5>Orchid Plant</h5>
+        <p class="price">₹18.23</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant15.png" alt="Product 15">
+        <h5>Anthurium Plant</h5>
+        <p class="price">₹5.18</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img class="product-imgs" src="Images/Plant16.png" alt="Product 16">
+        <h5>Alocasia Plant</h5>
+        <p class="price">₹16.29</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
