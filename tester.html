@@ -1,0 +1,154 @@
+<html>
+<style>
+
+
+/* CSS */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+    .heading{
+        color:green;
+    }
+</style>
+
+<head>
+    <title>PHP login system</title>
+    <script src="firedatabase.js"></script>
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/9.22.0/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/9.22.0/firebase-auth-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-database-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-firestore-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-functions-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-messaging-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-storage-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-analytics-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-remote-config-compat.js"></script>
+        <script defer src="/__/firebase/9.22.0/firebase-performance-compat.js"></script>
+        <!-- 
+              initialize the SDK after all desired features are loaded, set useEmulator to false
+              to avoid connecting the SDK to running emulators.
+            -->
+        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="frm">
+        <center>
+            <h1>Login</h1>
+          <section id = "form">
+                <p>
+                    <label> Username: </label>
+                    <input type="text" id="email" name="user" />
+                </p>
+                <p>
+                    <label> Password: </label>
+                    <input type="password" id="password" name="pass" />
+                </p>
+                <p>
+                    <button onclick="normallogin()" class = "button-89">Login</button>
+                </p>
+                    <br>
+                    <p>
+                    <button onclick="googlelogin()" class = "button-52">Sign in with Google</button>
+                    </p>
+            </section>
+              <br><br><br>
+            <h2 id = "greeting"></h2>
+        </center>
+    </div>
+
+    <script>
+        function validation() {
+            var id = document.f1.user.value;
+            var ps = document.f1.pass.value;
+            if (id.length == "" && ps.length == "") {
+                alert("User Name and Password fields are empty");
+                return false;
+            }
+            else {
+                if (id.length == "") {
+                    alert("User Name is empty");
+                    return false;
+                }
+                if (ps.length == "") {
+                    alert("Password field is empty");
+                    return false;
+                }
+            }
+        }  
+    </script>
+</body>
+
+</html>

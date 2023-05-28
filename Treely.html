@@ -1,73 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font-Awesome -->
-  <script src="https://use.fontawesome.com/4cb96b30d0.js"></script>
-  <script src="https://kit.fontawesome.com/c5f5a10487.js" crossorigin="anonymous"></script>
-  <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link href="bootstrap-5.2.0-dist\css\bootstrap.css" rel="'stylesheet">
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- CSS Styles -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
-  <title>Treely Delivery</title>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const search = document.getElementById("search");
-      const products = document.getElementsByClassName("product");
 
-      search.addEventListener("keyup", () => {
-        const term = search.value.toLowerCase();
-        const words = term.split(" ");
-
-        Array.from(products).forEach((product) => {
-          const title = product.getElementsByTagName("h2")[0].innerText.toLowerCase();
-          let match = true;
-
-          words.forEach((word) => {
-            if (title.indexOf(word) == -1) {
-              match = false;
-            }
-          });
-
-          if (match) {
-            product.style.display = "block";
-          } else {
-            product.style.display = "none";
-          }
-        });
-      });
-    });
-
-    const cartButtons = document.querySelectorAll('.cart-button');
-
-    cartButtons.forEach(button => {
-      button.addEventListener('click', cartClick);
-    });
-
-    function cartClick() {
-      let button = this;
-      button.classList.add('clicked');
-    }
-
-
-
-
-  </script>
-  <style>
-    h2 {
-      display: block;
-    }
-  </style>
-</head>
 
 <body>
   <section class="colored-section" id="title">

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="store.js" async></script>
+
+
+    <script src="https://use.fontawesome.com/4cb96b30d0.js"></script>
+    <script src="https://kit.fontawesome.com/c5f5a10487.js" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="bootstrap-5.2.0-dist\css\bootstrap.css" rel="'stylesheet">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        .cart{
+
+            width: 25%;
+            height: 25%;
+            text-align-last: center;
+            margin-right: 0;
+   
+        }
+ 
+    </style>
+    <title>Treely Delivery</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const search = document.getElementById("search");
+            const products = document.getElementsByClassName("product");
+
+            search.addEventListener("keyup", () => {
+                const term = search.value.toLowerCase();
+                const words = term.split(" ");
+
+                Array.from(products).forEach((product) => {
+                    const title = product.getElementsByTagName("h2")[0].innerText.toLowerCase();
+                    let match = true;
+
+                    words.forEach((word) => {
+                        if (title.indexOf(word) == -1) {
+                            match = false;
+                        }
+                    });
+
+                    if (match) {
+                        product.style.display = "block";
+                    } else {
+                        product.style.display = "none";
+                    }
+                });
+            });
+        });
+
+        const cartButtons = document.querySelectorAll('.cart-button');
+
+        cartButtons.forEach(button => {
+            button.addEventListener('click', cartClick);
+        });
+
+        function cartClick() {
+            let button = this;
+            button.classList.add('clicked');
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+<section class="colored-section" id="title">
+    <!-- NavBar -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href=""><img class="logo-image" src="Images\Logo.jpg"> Treely Delivery</a>
+
+            <header>
+                <input type="text" id="search" placeholder="Search..." style="margin-left:150% ;width:500px;">
+            </header>
+
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+                </div> -->
+        </nav>
+    </div>
+</section>
+    <section class="container content-section">
+        <div class="shop-items product-grid">
+            <div class="shop-item product">
+                <span class="shop-item-title">Bonsai tree</span>
+                <img class="shop-item-image product-imgs" src="Images/Plant1.png">
+                <div class="shop-item-details">Rs
+                    <span class="shop-item-price">1299</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item product">
+                <span class="shop-item-title">Merch Plant</span>
+                <img class="shop-item-image product-imgs" src="Images/Plant2.png">
+                <div class="shop-item-details">Rs
+                    <span class="shop-item-price">450</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item product">
+                <span class="shop-item-title">Aloevera</span>
+                <img class="shop-item-image product-imgs" src="Images/Plant3.png">
+              <!-- <div class="shop-item-details">Rs -->
+                    <span class="shop-item-price">350</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                <!-- </div> -->
+            </div>
+            <div class="shop-item product">
+                <span class="shop-item-title">Vishnudeva Plant</span>
+                <img class="shop-item-image product-imgs" src="Images/Plant4.png">
+                <div class="shop-item-details">Rs
+                    <span class="shop-item-price">200</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item product">
+                <span class="shop-item-title">Album 4</span>
+                <img class="shop-item-image product-imgs" src="Images/Plant4.png">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$19.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    <article id = "cartcheck" class="cart" style="position: fixed; margin-left: 75%;">questionmark</article>
+    <section class="container content-section cart cartcontent" id ="cartopen" style="position: fixed; margin-left: 75%; height:fit-content; ">
+        <h2 class="section-header ">CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+        </div>
+        <div class="cart-total">
+            <br>
+            <strong class="cart-total-title">Total</strong>
+           
+            <span class="cart-total-price">Rs 0</span>
+            <br><br>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </section>
+</body>
+
+</html>

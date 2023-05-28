@@ -1,0 +1,32 @@
+        const db = firebase.firestore();
+
+        db.collection('plantCollection')
+            .get()
+            .then((querySnapshot) => {
+                const productsContainer = document.getElementById('products-container');
+
+                querySnapshot.forEach((doc) => {
+                    const product = doc.data();
+
+                    const productBox = document.createElement('div');
+                    productBox.classList.add('product-box');
+
+                    const nameElement = document.createElement('h3');
+                    nameElement.textContent = product.name;
+
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.textContent = product.description;
+
+                    const priceElement = document.createElement('p');
+                    priceElement.textContent = `Price: ${product.price}`;
+
+                    productBox.appendChild(nameElement);
+                    productBox.appendChild(descriptionElement);
+                    productBox.appendChild(priceElement);
+
+                    productsContainer.appendChild(productBox);
+                });
+            })
+            .catch((error) => {
+                console.log('Error getting documents:', error);
+            });

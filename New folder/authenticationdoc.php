@@ -18,7 +18,7 @@
         $_SESSION['varname'] = $username;
         if($count == 1){  
             echo "<h1><center> Login successful </center></h1>";  
-            echo "<a href = \"treely.html\">Continue</a>";
+            echo "<a href = \"testdeliv.html\">Continue</a>";
         }  
         else{  
             echo "<h1> Login failed. Invalid username or password.</h1>";  

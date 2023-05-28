@@ -33,40 +33,5 @@
     "image": "5",
     "recipe": "Add 1 Cup coriander leaves, 1 Cup Mint leaves, 1 Cup Spinach, 1 Apple, 1 Cup Cucumber, 1 tbsp Lemon juice, Salt, and grind it by adding some water",
     "description": "Boosts the immunity"
-  },
-  "r6": {
-    "name": "Antioxidant Green Tea",
-    "ingredients": "Cinnamon, Organic green tea leaves, Cardamom, Jaggery",
-    "image": "6",
-    "recipe": "Grind ingredients to make fine powder, Boil water, Add powder to water, Stimmer for a while",
-    "description": "Antioxidant Green Tea which controls the damaging effects of free radicals in the body"
-  },
-  "r7": {
-    "name": "Cinnamon Tea",
-    "ingredients": "Cinnamon, Black tea",
-    "image": "7",
-    "recipe": "Make regular cup of Black tea, add a pinch of cinnamon powder.",
-    "description": "Cinnamon Tea is filled with antioxidants and offer several health benefits, it also reduces PMS and menstrual cramp99 "
-  },
-  "r8": {
-    "name": "Kharjuradi Mantha (Date's energy drink)",
-    "ingredients": "Dates, Grapes, Pomegranate seeds, Tamarind Juice, Amla Powder, Jaggery, Water",
-    "image": "8",
-    "recipe": "Soak all ingredients in cold water for 2-3 hrs, Grind it, add cold water",
-    "description": "This Enery drink is excellent for digestion, dehydration or fatigue"
-  },
-  "r9": {
-    "name": "Mudga Yusha (Medicated green gram soup)",
-    "ingredients": "Green gram, pepper, Dry ginger powder, Salt, Ghee, Mustard seeds, Curry leaves, Water",
-    "image": "9",
-    "recipe": "Cook green gram, add salt, pepper, dry ginger powder, mix well with mustard, curry leaves and ghee",
-    "description": "It can be used during fever, tastelessness, ulcers, throat disorders, eye disorders, many illnesses"
-  },
-  "r10": {
-    "name": "Rasaala (Medicated Curd)",
-    "ingredients": "Curd, Jaggery, Pepper, Mustard seeds, Fenugreek, Cumin seeds, Curry leaves, Ghee, Salt",
-    "image": "10",
-    "recipe": "Add pepper powder, salt, jaggery to fresh curd, mix it well, season it with ghee, mustard, fenugreek, cumin seeds and curry leaves",
-    "description": "It is good for the gut and can be useful in inflammatory bowel diseases such as Crohn's disease and colitis"
   }
 }

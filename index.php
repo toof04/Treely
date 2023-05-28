@@ -79,7 +79,7 @@ if(isset($_POST['name'])){
              Address:<input type="text" name = "address" id = "address" placeholder="Enter your address" style="height:30px"></div><br>
              <div style="border: 2px solid gray; padding:10px;margin-left:40%;position:absolute;top:35%;"> Username: <input type="username" name="username" id="username"  placeholder="Username"><br>
             <br>Password:  <input type="password" name="password" id="password"  placeholder="Password"></div>
-            <div style="margin-left:49%;position:absolute;top:75%;"> <center><button class="btn">Submit</button> </center>
+            <div style="margin-left:49%;position:absolute;top:75%;"> <center><button class="btn">Submit</button> <br><br></center>
            <?php
         if($insert == true){
         echo "<p class='submitMsg'>Congrats ! your account has been made, now you can Login.</p>";
